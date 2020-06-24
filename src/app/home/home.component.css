@@ -1,0 +1,17 @@
+.panel-heading{
+    background-color: rgba(235, 200, 147, 0.63);
+    display: block;
+    padding: 3%;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.panel-footer{
+    background-color: rgba(236, 214, 179, 0.63);
+    display: block;
+    padding: 3%;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}

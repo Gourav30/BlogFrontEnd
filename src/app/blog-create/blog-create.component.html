@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form #createBlogForm="ngForm" (ngSubmit)="createBlog()">
+                <div class="form-group">
+
+                    <label>Blog Title</label>
+                    <input type="text" name="blogTitle" [(ngModel)]="blogTitle" #title="ngModel" class="form-control"
+                        placeholder="Enter the Blog Title" required>
+                    <div>
+                        <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+                            Blog Title is Required
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" name="blogDescription" [(ngModel)]="blogDescription"
+                        #description="ngModel" required>
+                </div>
+                <div class="form-group">
+                    <label>Body</label>
+                    <textarea type="text" class="form-control" name="blogBodyHtml" [(ngModel)]="blogBodyHtml"
+                        #body="ngModel" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Author</label>
+                    <input type="text" class="form-control" name="blogAuthor" [(ngModel)]="blogAuthor"
+                        #description="ngModel" required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select [(ngModel)]="blogCategory" #category="ngModel" name="blogCategory" class="form-control"
+                        id="category" required>
+                        <option *ngFor="let category of possibleCategory" [value]="category">{{category}}</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!createBlogForm.form.valid">Post the
+                    Blog</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

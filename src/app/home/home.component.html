@@ -1,0 +1,23 @@
+<div class="container" style="text-align:center">
+    <div class="row" style="text-align:center">
+        <div class="col-md-12" style="font-size:22px">All Blogs</div>
+    </div>
+    <br>
+    <br>
+    <div class="row" style="text-align:center" *ngIf="allBlogs.length>0">
+        <!-- iterative div starts below -->
+        <div *ngFor="let blog of allBlogs" class="col-md-6">
+
+            <div class="panel panel-default" style="margin-top: 3px;  margin-bottom: 3px;"  class="border border-primary">
+                <div class="panel-heading">{{blog.title | uppercase}}</div>
+                <div class="panel-body">
+                    <p>{{blog.description}}</p>
+                </div>
+                <div class="panel-footer">Posted on {{blog.created | date}}<br /> by {{blog.author}}
+                    <br /><br /> <a [routerLink]="['/blog',blog.blogId]" class="btn btn-primary"
+                        style="margin-bottom:5px">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

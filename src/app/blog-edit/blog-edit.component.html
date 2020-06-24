@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form #createBlogForm="ngForm" (ngSubmit)="editThisBlog()">
+                <div class="form-group">
+
+                    <label>Blog Title</label>
+                <input type="text" name="blogTitle" [(ngModel)]="currentBlog.title" #title="ngModel" class="form-control" placeholder="Enter the Blog Title" required>
+                <div>
+                    <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+                        Blog Title is Required
+                    </div>
+                </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" name="blogDescription" [(ngModel)]="currentBlog.description" #description="ngModel" class="form-control"  required>
+                </div>
+                <div class="form-group">
+                    <label>Body</label>
+                    <textarea type="text" name="blogBodyHtml" [(ngModel)]="currentBlog.bodyHtml" #body="ngModel" rows="3" class="form-control" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Author</label>
+                    <input type="text" name="blogAuthor" [(ngModel)]="currentBlog.author" #description="ngModel" class="form-control"  required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select name="blogCategory" [(ngModel)]="currentBlog.category" #category="ngModel" class="form-control" id="category" required>
+                        <option *ngFor="let category of possibleCategory" [value]="category">{{category}}</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!createBlogForm.form.valid">Edit the Blog</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
