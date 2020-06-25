@@ -3,7 +3,7 @@
     <div class="col-md-12">
         <!-- <p style="text-align: end; font-weight: bold;">Views : {{currentBlog.increaseBlogView}}</p> -->
         <h2 >{{currentBlog.title}}</h2>
-        <p>posted by {{currentBlog.blogAuthor}} on {{currentBlog.created | date}}</p>
+        <p>posted by {{currentBlog.author}} on {{currentBlog.created | date}}</p>
         <p *ngIf="currentBlog.tags.lenght>0">tags : <span
                 *ngIf="let tag of currentBlog.tags; let first=first;let last=last">{{tag}}{{last ? '' : ', '}}</span>
         </p>

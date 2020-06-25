@@ -1,4 +1,4 @@
-import { Injectable, ɵsetCurrentInjector } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
@@ -60,18 +60,18 @@ export class BlogHttpService {
     return myResponse;
   }
 
-  public deleteBlog(blogID): any {
+  public deleteBlog(blogId): any {
 
     let data = {}
-    //let myResponse = this._http.post(this.baseUrl + '/' + blogID + '/delete' + '?authToken=' + this.authToken, data);
-    let myResponse = this._http.post('api/v1/blogs' + '/' + blogID + '/delete' + '?authToken=' + this.authToken, data);
+    //let myResponse = this._http.post(this.baseUrl + '/' + blogId + '/delete' + '?authToken=' + this.authToken, data);
+    let myResponse = this._http.post('api/v1/blogs' + '/' + blogId + '/delete' + '?authToken=' + this.authToken, data);
     return myResponse;
   }
 
-  public editBlog(blogdata, blogID): any {
+  public editBlog(blogId, blogData): any {
 
-    //let myResponse = this._http.put(this.baseUrl + '/' + blogdata + '/edit' + '?authToken=' + this.authToken, blogdata);
-    let myResponse = this._http.put('api/v1/blogs' + '/' + blogID + '/edit' + '?authToken=' + this.authToken, blogdata);
+    //let myResponse = this._http.put(this.baseUrl + '/' + blogId + '/edit' + '?authToken=' + this.authToken, blogData);
+    let myResponse = this._http.put('api/v1/blogs' + '/' + blogId + '/edit' + '?authToken=' + this.authToken, blogData);
     return myResponse;
   }
 

@@ -42,6 +42,8 @@ export class BlogViewComponent implements OnInit {
       }
     )
   }
+
+
   public deleteThisBlog(): any {
     this.blogHttpService.deleteBlog(this.currentBlog.blogId).subscribe(
       data => {
