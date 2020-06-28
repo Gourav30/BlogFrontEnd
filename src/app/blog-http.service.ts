@@ -15,10 +15,6 @@ export class BlogHttpService {
   public allBlogs;
   public currentBlog;
 
-  /* Using Edwisor API */
-  //public baseUrl = 'https://blogapp.edwisor.com/api/v1/blogs';
-  //public authToken = 'MGNjYjc3NWJiYjJlMjg3OGI3MzA0YjkyODczMTRjZTliMmIwZGFhNWI4NGEyMWYwM2Y1OWVmMDU5MDZkMzRiMWMzZWQxMDYyNjM1Y2U4ZGQ3NzhkZjY1NmI1YzBiOTgwZDk4YTU3YWViMWU0YjM2N2JmNDY0ZmI1MDAzMmNjMzI3OQ==';
-
 
   /* Without using proxy.conf.json*/
   //public baseUrl = 'http://localhost:3000/api/v1/blogs';
@@ -39,7 +35,7 @@ export class BlogHttpService {
 
   public getAllBlogs(): any {
     // let myResponse = this._http.get(this.baseUrl + '/all' + '?authToken=' + this.authToken);
-    // let myResponse = this._http.get(this.getAllBlogs() + 'api/v1/blogs/all?authToken=' + this.authToken);
+    // let myResponse = this._http.get(this.getBaseUrl() + 'api/v1/blogs/all?authToken=' + this.authToken);
     let myResponse = this._http.get('api/v1/blogs/all?authToken=' + this.authToken);
     console.log(myResponse);
     return myResponse;
