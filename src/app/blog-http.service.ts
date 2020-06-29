@@ -17,7 +17,8 @@ export class BlogHttpService {
 
 
   /* Without using proxy.conf.json*/
-  //public baseUrl = 'http://localhost:3000/api/v1/blogs';
+  //public baseUrl = 'http://localhost:3000/';
+  public baseUrl = 'http://api.gourav.tech/';
 
   public authToken = 'Admin';
 
@@ -36,7 +37,7 @@ export class BlogHttpService {
   public getAllBlogs(): any {
     // let myResponse = this._http.get(this.baseUrl + '/all' + '?authToken=' + this.authToken);
     // let myResponse = this._http.get(this.getBaseUrl() + 'api/v1/blogs/all?authToken=' + this.authToken);
-    let myResponse = this._http.get('api/v1/blogs/all?authToken=' + this.authToken);
+    let myResponse = this._http.get(this.baseUrl + 'api/v1/blogs/all?authToken=' + this.authToken);
     console.log(myResponse);
     return myResponse;
   }
@@ -45,14 +46,14 @@ export class BlogHttpService {
   public getSingleBlogInfo(currentBlogId): any {
 
     //let myResponse = this._http.get(this.baseUrl + '/view' + '/' + currentBlogId + '?authToken=' + this.authToken);
-    let myResponse = this._http.get('api/v1/blogs/view' + '/' + currentBlogId + '?authToken=' + this.authToken);
+    let myResponse = this._http.get(this.baseUrl + 'api/v1/blogs/view' + '/' + currentBlogId + '?authToken=' + this.authToken);
     return myResponse;
   }
 
   public createBlog(blogData): any {
 
     //let myResponse = this._http.post(this.baseUrl + '/create' + '?authToken=' + this.authToken, blogData);
-    let myResponse = this._http.post('api/v1/blogs/create' + '?authToken=' + this.authToken, blogData);
+    let myResponse = this._http.post(this.baseUrl + 'api/v1/blogs/create' + '?authToken=' + this.authToken, blogData);
     return myResponse;
   }
 
@@ -60,14 +61,14 @@ export class BlogHttpService {
 
     let data = {}
     //let myResponse = this._http.post(this.baseUrl + '/' + blogId + '/delete' + '?authToken=' + this.authToken, data);
-    let myResponse = this._http.post('api/v1/blogs' + '/' + blogId + '/delete' + '?authToken=' + this.authToken, data);
+    let myResponse = this._http.post(this.baseUrl + 'api/v1/blogs' + '/' + blogId + '/delete' + '?authToken=' + this.authToken, data);
     return myResponse;
   }
 
   public editBlog(blogId, blogData): any {
 
     //let myResponse = this._http.put(this.baseUrl + '/' + blogId + '/edit' + '?authToken=' + this.authToken, blogData);
-    let myResponse = this._http.put('api/v1/blogs' + '/' + blogId + '/edit' + '?authToken=' + this.authToken, blogData);
+    let myResponse = this._http.put(this.baseUrl + 'api/v1/blogs' + '/' + blogId + '/edit' + '?authToken=' + this.authToken, blogData);
     return myResponse;
   }
 
